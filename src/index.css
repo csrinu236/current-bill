@@ -1,0 +1,312 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: rgb(226, 143, 143);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1120px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+
+/* section */
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+.fixed-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: var(--fixed-width);
+}
+img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media screen and (min-width: 992px) {
+  .section {
+    width: 95vw;
+  }
+}
+
+.section {
+  padding: 5rem 0;
+}
+/*
+=============== 
+Tours
+===============
+*/
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.underline {
+  background: var(--clr-primary-5);
+  height: 0.25rem;
+  width: 5rem;
+  margin: 0 auto;
+}
+.form {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  padding: 2rem;
+  position: relative;
+}
+.formControl {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem 0;
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 762px) {
+  .formControl {
+    grid-template-columns: 1fr 150px;
+  }
+  .btn {
+    font-size: 1rem;
+  }
+  .formControl input {
+    font-size: 1rem;
+  }
+}
+.btn {
+  letter-spacing: var(--spacing);
+  cursor: pointer;
+  background: var(--clr-primary-7);
+  border: none;
+  font-family: inherit;
+  border-radius: var(--radius);
+  text-transform: capitalize;
+  transition: var(--transition);
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+.btn:hover {
+  background: var(--clr-primary-5);
+}
+.formControl input {
+  padding: 0.5rem 1rem;
+  border: transparent;
+  background-color: var(--clr-grey-10);
+  border-radius: var(--radius);
+  font-family: inherit;
+  letter-spacing: var(--spacing);
+  width: 100%;
+}
+
+.formControl input.alert {
+  border: var(--clr-red-dark);
+}
+.item {
+  display: grid;
+  grid-template-columns: 3fr 3fr 1fr;
+  background: var(--clr-grey-10);
+  border-radius: var(--radius);
+  margin-bottom: 0.75rem;
+  padding: 0.35rem;
+
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .item {
+    padding: 0.35rem 1rem;
+  }
+}
+.item p {
+  margin-bottom: 0;
+  color: var(--clr-black);
+}
+#delete {
+  color: var(--clr-primary-5);
+  cursor: pointer;
+  justify-self: flex-end;
+}
+
+.delete {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border: transparent;
+  font-family: inherit;
+  letter-spacing: var(--spacing);
+  background: var(--clr-red-light);
+  border-radius: var(--radius);
+  cursor: pointer;
+  padding: 0.15rem 0;
+}
+
+.docBtn {
+  display: grid;
+  width: auto;
+  place-items: center;
+  font-size: 1.25rem;
+  background: none;
+  color: var(--clr-primary-2);
+  padding: 0;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.docBtn:hover {
+  background: var(--clr-primary-10);
+}
+
+.modal {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100vw;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  overflow-y: scroll;
+}
+
+.modalCenter {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--dark-shadow);
+  margin: 3rem 0;
+  width: 80%;
+  max-width: 700px;
+  position: relative;
+  padding: 2rem;
+}
+
+.modal .delete {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: none;
+  width: unset;
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: var(--clr-red-dark);
+}
+
+.modal p {
+  color: var(--clr-grey-3);
+}
