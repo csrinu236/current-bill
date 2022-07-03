@@ -8,7 +8,7 @@ const App = () => {
     focusRef.current.focus();
   }, []);
 
-  const [isModelOpen, setModel] = useState(true);
+  const [isModelOpen, setModel] = useState(false);
 
   const focusRef = useRef(null);
 
@@ -23,7 +23,10 @@ const App = () => {
     let bill = 0;
 
     let units = parseInt(focusRef.current.value);
-    if (!units) return;
+    if (!units || units < 0) {
+      focusRef.current.value = null;
+      return;
+    }
     if (units <= 100) {
       if (units <= 50) {
         bill += units * 1.95 * 1.029 + 40;
